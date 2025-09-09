@@ -1,35 +1,37 @@
-# 将棋CLI/GUI（AI対戦）
+# 将棋ゲーム
 
-ASCII盤面で対局できる将棋CLIと、ブラウザで動く簡易GUI版を同梱しています。
-- ルール: 持ち駒/打ち歩詰め/二歩/成り/王手放置不可 を実装
-- 入力: USI風 `7g7f`, 成りは `7g7f+`, 打ちは `P*7f`
-- タイマー: 持ち時間制（秒）+ 秒読み（秒）
+![将棋ゲーム画面](public/shogi-game-screenshot.png)
 
-## 使い方
+ブラウザで遊べる本格的な将棋ゲームです。
 
+## 遊べること
+
+- コンピューター（AI）との対戦
+- 本物の将棋ルール（王手・詰み・成り・持ち駒）
+- 美しい木目調の盤面と駒
+
+## 遊び方
+
+1. 自分の駒（下側）をクリックして選択
+2. 光った場所をクリックして移動
+3. 取った駒は持ち駒として使える
+4. 相手の王様を詰ませたら勝ち
+
+## 実行方法
+
+```bash
+npm install
+npm run dev
 ```
-python3 -m shogi_ai.cli --time 300 --byoyomi 5 --ai-level 2
-```
 
-オプション:
-- `--time`: 持ち時間（秒、デフォルト300）
-- `--byoyomi`: 秒読み（秒、デフォルト5）
-- `--ai-level`: 0=ランダム, 1=静的評価, 2=深さ2, 3=深さ3（デフォルト2）
+ブラウザで http://localhost:3000 を開く
 
-## GUI(Web)版
+## デモ
 
-2通りの起動方法があります。
+https://shogi-nextjs-chhbu0r4k-hiroaki-yoshikuras-projects-7b26a5a1.vercel.app
 
-- 依存なし（標準ライブラリ）: `python3 server.py`
-- Flask使用（任意）: `pip install flask` の後、`python3 webapp.py`
+## 技術
 
-アクセスURL: `http://localhost:8000/`
-
-機能:
-- 盤面クリックで移動/成り選択、持ち駒のボタンから打ち
-- USI文字列で直接指し手入力も可
-- AI手番/深さの切替、AIに指させるボタン、対局初期化
-
-## 注意事項
-- 千日手は4回目同一局面で引き分け判定（連続王手の千日手の反則は未対応）。
-- 持将棋（入玉・駒点計算）は未対応。必要なら拡張可能。
+- Next.js + React
+- TypeScript
+- Tailwind CSS

@@ -3,7 +3,7 @@
 ![将棋ゲーム画面](public/shogi-game-screenshot.png)
 
 **🎮 デモURL**: https://app005-syougi.vercel.app  
-**⏱️ 開発時間**: 1〜1.5日 | **📝 コミット数**: 5コミット | **🤖 作成者**: クロ  
+**⏱️ 開発時間**: 60分 | **📝 コミット数**: 5コミット | **🤖 作成者**: チャッピー  
 **🛠️ 技術スタック**: Next.js, React, TypeScript, Tailwind CSS, Vercel
 
 ブラウザで遊べる本格的な将棋ゲームです。ルールエンジンをちゃんと作って、合法手や王手判定もしっかり実装しています 🏆
@@ -64,20 +64,6 @@ npm run dev
 - **開発環境**: Turbopack（高速ビルド）、ESLint
 - **デプロイ**: Vercel（CDN配信で高速表示）
 
-### 実装の特徴
-```javascript
-// 合法手判定の例
-function isValidMove(from, to, board, piece) {
-  // 駒固有のルールチェック
-  if (!isPieceValidMove(piece, from, to, board)) return false;
-  
-  // 移動後に王手になるかチェック（王手放置防止）
-  const tempBoard = simulateMove(board, from, to);
-  if (isInCheck(tempBoard, piece.player)) return false;
-  
-  return true;
-}
-```
 
 ## 💡 開発で学んだこと
 
@@ -101,14 +87,6 @@ function isValidMove(from, to, board, piece) {
 - [ ] 対人戦（オンライン対戦）機能
 - [ ] 戦型解析・定跡表示
 
-## 🎪 100個アプリチャレンジについて
-
-このアプリは「100個アプリ作るチャレンジ」の第3弾として開発されました。
-
-**チャレンジの特徴**:
-- **小さく作って、速く学ぶ**: 1〜1.5日のスピード開発
-- **動くだけでなく気持ちよく使える**: エラーハンドリングとUX重視
-- **計測→仮説→検証**: 問題を測定し、仮説を立てて解決
 
 ## 📝 フィードバック
 
